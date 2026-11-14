@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="redGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.75" />
+      <stop offset="60%" stop-color="#9f1239" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#07070a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="mGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#fbcfe8" />
+    </linearGradient>
+    <linearGradient id="crimsonBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e11d48" />
+      <stop offset="50%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#be123c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Obsidian Container with rounded squircle corners -->
+  <rect width="64" height="64" rx="16" fill="#07070a" />
+
+  <!-- Crimson Border Halo -->
+  <rect width="62" height="62" x="1" y="1" rx="15" fill="none" stroke="#e11d48" stroke-width="1.8" stroke-opacity="0.45" />
+
+  <!-- Ambient Volumetric Red Bloom -->
+  <circle cx="32" cy="30" r="26" fill="url(#redGlow)" />
+
+  <!-- Stylized Geometric "M" Monogram -->
+  <path 
+    d="M 17 45 L 17 19 L 32 33 L 47 19 L 47 45" 
+    fill="none" 
+    stroke="url(#mGradient)" 
+    stroke-width="5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+  />
+
+  <!-- Apex Laser Dot (Applied AI Core) -->
+  <circle cx="32" cy="17" r="3.2" fill="#ef4444" />
+  <circle cx="32" cy="17" r="1.5" fill="#ffffff" />
+
+  <!-- Crimson Baseline Accent -->
+  <line x1="20" y1="51" x2="44" y2="51" stroke="url(#crimsonBar)" stroke-width="2.5" stroke-linecap="round" />
+</svg>
