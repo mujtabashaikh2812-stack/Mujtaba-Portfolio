@@ -80,6 +80,5 @@ This project is optimized for zero-configuration instant deployment on [Vercel](
 
 * **Engineer:** Shaikh Mohd Mujtaba
 * **Email:** [mujtabashaikh2812@gmail.com](mailto:mujtabashaikh2812@gmail.com)
-* **Phone:** +91 9359110610
 * **LinkedIn:** [linkedin.com/in/mujtabashaikh-dev](https://linkedin.com/in/mujtabashaikh-dev)
 * **GitHub:** [github.com/mujtabashaikh2812-stack](https://github.com/mujtabashaikh2812-stack)
