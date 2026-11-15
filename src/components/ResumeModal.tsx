@@ -214,14 +214,23 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <div>
                   <h3 className="font-serif text-lg font-bold text-white">Orbit - Leads & Sales Intelligence Platform</h3>
                   <p className="font-mono text-xs text-cyan-400">Full-Stack Commercial Lead Routing & Intelligence Engine</p>
-                  <div className="pt-1 text-xs font-mono">
+                  <div className="flex flex-wrap gap-3 pt-1 text-xs font-mono">
                     <a 
                       href="https://orbit-sales-platform.vercel.app" 
                       target="_blank" 
                       rel="noreferrer"
-                      className="text-cyan-400 hover:underline flex items-center gap-1 font-semibold"
+                      className="text-rose-300 hover:underline flex items-center gap-1 font-semibold"
                     >
                       Live Demo: orbit-sales-platform.vercel.app ↗
+                    </a>
+                    <span className="text-slate-600">•</span>
+                    <a 
+                      href="https://github.com/mujtabashaikh2812-stack/orbit-sales-platform" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="text-slate-300 hover:underline flex items-center gap-1"
+                    >
+                      GitHub Repo ↗
                     </a>
                   </div>
                 </div>

@@ -136,11 +136,11 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
 
         {/* 2. ORBIT – LEADS & SALES INTELLIGENCE */}
         <div className="reveal-on-scroll">
-          <TiltCard className="p-6 sm:p-10 border-white/10 bg-black/80">
+          <TiltCard className="p-6 sm:p-10 border-crimson/25 bg-black/80">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-3">
-                  <span className="px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-mono text-xs font-bold">
+                  <span className="px-3.5 py-1 rounded-full bg-crimson/15 border border-crimson/30 text-rose-300 font-mono text-xs font-bold">
                     DATA & ANALYTICS PLATFORM
                   </span>
                   <span className="text-xs font-mono text-slate-500">Commercial Architecture</span>
@@ -156,11 +156,11 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
 
                 <div className="space-y-3 font-mono text-xs text-slate-300 pt-2">
                   <div className="flex items-start gap-2.5">
-                    <span className="text-cyan-400 font-bold mt-0.5">❯</span>
+                    <span className="text-crimson font-bold mt-0.5">❯</span>
                     <span><strong>Sub-80ms Retrieval:</strong> Engineered compound indexing and caching strategies across PostgreSQL and MongoDB, slashing query latency for high-volume prospect records.</span>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <span className="text-cyan-400 font-bold mt-0.5">❯</span>
+                    <span className="text-crimson font-bold mt-0.5">❯</span>
                     <span><strong>Automated Qualification:</strong> Automated multi-tier prospect scoring pipelines with asynchronous Node.js microservices, cutting manual sales qualification cycle time by 60%.</span>
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
                     href="https://orbit-sales-platform.vercel.app" 
                     target="_blank" 
                     rel="noreferrer"
-                    className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold text-xs hover:scale-105 transition flex items-center gap-2 shadow-lg shadow-cyan-500/25"
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-crimson to-scarlet text-white font-bold text-xs hover:scale-105 transition flex items-center gap-2 shadow-lg shadow-crimson/30"
                   >
                     <span>Visit Live Platform</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -179,19 +179,29 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
                   {onOpenArchitecture && (
                     <button
                       onClick={() => onOpenArchitecture('orbit')}
-                      className="px-5 py-3 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-xs font-mono text-cyan-300 transition flex items-center gap-2 cursor-pointer hover:scale-105"
+                      className="px-5 py-3 rounded-full bg-crimson/15 hover:bg-crimson/25 border border-crimson/40 hover:border-crimson text-xs font-mono text-rose-300 transition flex items-center gap-2 cursor-pointer hover:scale-105"
                       title="Inspect Database & Microservices Blueprint"
                     >
                       <Layers className="w-3.5 h-3.5" />
                       <span>Architecture Blueprint ↗</span>
                     </button>
                   )}
+
+                  <a 
+                    href="https://github.com/mujtabashaikh2812-stack/orbit-sales-platform" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="px-5 py-3 rounded-full bg-black/60 border border-white/10 hover:border-crimson text-xs font-mono text-slate-300 transition flex items-center gap-2"
+                  >
+                    <GithubIcon className="w-3.5 h-3.5" />
+                    <span>Inspect Codebase ↗</span>
+                  </a>
                 </div>
               </div>
 
               <div className="lg:col-span-5 bg-black/60 rounded-2xl p-6 border border-white/10 space-y-4 font-mono text-xs">
                 <span className="text-[11px] text-slate-500 uppercase tracking-widest block flex items-center gap-2">
-                  <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                  <Terminal className="w-3.5 h-3.5 text-crimson" />
                   Engineering Benchmarks
                 </span>
                 
@@ -202,7 +212,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
                   </div>
                   <div className="flex justify-between py-2 border-b border-white/5">
                     <span className="text-slate-400">Cycle Time Reduction</span>
-                    <span className="text-cyan-300 font-bold">60% Faster Qualification</span>
+                    <span className="text-rose-300 font-bold">60% Faster Qualification</span>
                   </div>
                   <div className="flex justify-between py-2">
                     <span className="text-slate-400">Storage Engines</span>
