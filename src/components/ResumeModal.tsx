@@ -214,6 +214,16 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <div>
                   <h3 className="font-serif text-lg font-bold text-white">Orbit - Leads & Sales Intelligence Platform</h3>
                   <p className="font-mono text-xs text-cyan-400">Full-Stack Commercial Lead Routing & Intelligence Engine</p>
+                  <div className="pt-1 text-xs font-mono">
+                    <a 
+                      href="https://orbit-sales-platform.vercel.app" 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="text-cyan-400 hover:underline flex items-center gap-1 font-semibold"
+                    >
+                      Live Demo: orbit-sales-platform.vercel.app ↗
+                    </a>
+                  </div>
                 </div>
                 <span className="font-mono text-[11px] text-slate-400 bg-white/5 px-2.5 py-1 rounded">
                   Next.js, Node.js, Express.js, MongoDB, Webhooks

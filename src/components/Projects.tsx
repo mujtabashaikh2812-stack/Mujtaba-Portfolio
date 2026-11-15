@@ -165,8 +165,18 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
                   </div>
                 </div>
 
-                {onOpenArchitecture && (
-                  <div className="pt-2">
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <a 
+                    href="https://orbit-sales-platform.vercel.app" 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold text-xs hover:scale-105 transition flex items-center gap-2 shadow-lg shadow-cyan-500/25"
+                  >
+                    <span>Visit Live Platform</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+
+                  {onOpenArchitecture && (
                     <button
                       onClick={() => onOpenArchitecture('orbit')}
                       className="px-5 py-3 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-xs font-mono text-cyan-300 transition flex items-center gap-2 cursor-pointer hover:scale-105"
@@ -175,8 +185,8 @@ export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
                       <Layers className="w-3.5 h-3.5" />
                       <span>Architecture Blueprint ↗</span>
                     </button>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               <div className="lg:col-span-5 bg-black/60 rounded-2xl p-6 border border-white/10 space-y-4 font-mono text-xs">
