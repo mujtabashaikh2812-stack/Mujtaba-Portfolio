@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, FileText } from 'lucide-react';
 
-export const Navigation: React.FC = () => {
+interface NavigationProps {
+  onOpenResume?: () => void;
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ onOpenResume }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -41,11 +45,22 @@ export const Navigation: React.FC = () => {
         <a href="#skills" className="hover:text-rose-300 transition-colors">05. Engine</a>
       </nav>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
         <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-[10px] font-mono text-emerald-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
           <span>AVAILABLE FOR HIRE</span>
         </div>
+
+        {onOpenResume && (
+          <button
+            onClick={onOpenResume}
+            className="px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-mono text-xs flex items-center gap-1.5 hover:border-crimson/50 transition cursor-pointer"
+            title="Open Curated Technical Resume"
+          >
+            <FileText className="w-3.5 h-3.5 text-rose-300" />
+            <span>Resume</span>
+          </button>
+        )}
 
         <a 
           href="#contact" 

@@ -1,6 +1,10 @@
 import React from 'react';
 import { TiltCard } from './TiltCard';
-import { ExternalLink, Zap, Terminal } from 'lucide-react';
+import { ExternalLink, Zap, Terminal, Layers } from 'lucide-react';
+
+interface ProjectsProps {
+  onOpenArchitecture?: (projectId: string) => void;
+}
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -8,7 +12,7 @@ const GithubIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5
   </svg>
 );
 
-export const Projects: React.FC = () => {
+export const Projects: React.FC<ProjectsProps> = ({ onOpenArchitecture }) => {
   return (
     <section id="work" className="py-24 border-b border-white/10 relative z-10 overflow-hidden">
       {/* Chapter Watermark */}
@@ -74,6 +78,18 @@ export const Projects: React.FC = () => {
                     <span>Visit Live Platform</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
+
+                  {onOpenArchitecture && (
+                    <button
+                      onClick={() => onOpenArchitecture('interview-coach')}
+                      className="px-5 py-3 rounded-full bg-crimson/15 hover:bg-crimson/25 border border-crimson/40 hover:border-crimson text-xs font-mono text-rose-300 transition flex items-center gap-2 cursor-pointer hover:scale-105"
+                      title="Inspect Pipeline & Streaming Architecture"
+                    >
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>Architecture Blueprint ↗</span>
+                    </button>
+                  )}
+
                   <a 
                     href="https://github.com/mujtabashaikh2812-stack/AI-INTERVIEW-COACH-PLATFORM" 
                     target="_blank" 
@@ -148,6 +164,19 @@ export const Projects: React.FC = () => {
                     <span><strong>Automated Qualification:</strong> Automated multi-tier prospect scoring pipelines with asynchronous Node.js microservices, cutting manual sales qualification cycle time by 60%.</span>
                   </div>
                 </div>
+
+                {onOpenArchitecture && (
+                  <div className="pt-2">
+                    <button
+                      onClick={() => onOpenArchitecture('orbit')}
+                      className="px-5 py-3 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400 text-xs font-mono text-cyan-300 transition flex items-center gap-2 cursor-pointer hover:scale-105"
+                      title="Inspect Database & Microservices Blueprint"
+                    >
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>Architecture Blueprint ↗</span>
+                    </button>
+                  </div>
+                )}
               </div>
 
               <div className="lg:col-span-5 bg-black/60 rounded-2xl p-6 border border-white/10 space-y-4 font-mono text-xs">

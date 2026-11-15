@@ -1,8 +1,12 @@
 import React from 'react';
 import { TiltCard } from './TiltCard';
-import { Layers, Cpu, Award } from 'lucide-react';
+import { Layers, Cpu, Award, FileText } from 'lucide-react';
 
-export const About: React.FC = () => {
+interface AboutProps {
+  onOpenResume?: () => void;
+}
+
+export const About: React.FC<AboutProps> = ({ onOpenResume }) => {
   return (
     <section id="about" className="py-24 border-b border-white/10 relative z-10 overflow-hidden">
       {/* Chapter Watermark */}
@@ -43,6 +47,18 @@ export const About: React.FC = () => {
                 AI Full Stack Developer • Systems Engineer • Applied AI Architect
               </p>
             </div>
+
+            {onOpenResume && (
+              <div className="pt-3 border-t border-white/10">
+                <button
+                  onClick={onOpenResume}
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-crimson/20 via-scarlet/20 to-crimson/10 border border-crimson/40 hover:border-crimson text-white font-mono text-xs flex items-center justify-center gap-2 hover:scale-[1.02] transition cursor-pointer"
+                >
+                  <FileText className="w-3.5 h-3.5 text-rose-300" />
+                  <span>Inspect Full Technical Resume</span>
+                </button>
+              </div>
+            )}
           </TiltCard>
         </div>
 

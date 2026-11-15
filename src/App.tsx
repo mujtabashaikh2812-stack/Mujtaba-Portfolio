@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CinematicIntro } from './components/CinematicIntro';
 import { ScrollHUD } from './components/ScrollHUD';
 import { Navigation } from './components/Navigation';
@@ -9,8 +9,13 @@ import { Research } from './components/Research';
 import { Education } from './components/Education';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
+import { ResumeModal } from './components/ResumeModal';
+import { ArchitectureModal } from './components/ArchitectureModal';
 
 export const App: React.FC = () => {
+  const [resumeOpen, setResumeOpen] = useState(false);
+  const [activeArchitecture, setActiveArchitecture] = useState<string | null>(null);
+
   // Intersection Observer for scroll-triggered reveal animations across every section
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -62,7 +67,7 @@ export const App: React.FC = () => {
       <ScrollHUD />
 
       {/* 5. FLOATING TOP NAVIGATION (Auto-hidden on Hero; fades in on Chapter 01) */}
-      <Navigation />
+      <Navigation onOpenResume={() => setResumeOpen(true)} />
 
       {/* 6. FULL-SCREEN 100VH OPENING HERO COVER */}
       <main className="relative z-10 w-full">
@@ -70,14 +75,18 @@ export const App: React.FC = () => {
 
         {/* 7. STORYTELLING CHAPTERS WITH SCROLL REVEAL ANIMATIONS */}
         <div className="max-w-6xl mx-auto px-6 sm:px-8 space-y-20 py-16">
-          <About />
-          <Projects />
+          <About onOpenResume={() => setResumeOpen(true)} />
+          <Projects onOpenArchitecture={(id) => setActiveArchitecture(id)} />
           <Research />
           <Education />
           <Skills />
-          <Contact />
+          <Contact onOpenResume={() => setResumeOpen(true)} />
         </div>
       </main>
+
+      {/* 8. INTERACTIVE MODALS */}
+      <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
+      <ArchitectureModal projectId={activeArchitecture} onClose={() => setActiveArchitecture(null)} />
     </div>
   );
 };

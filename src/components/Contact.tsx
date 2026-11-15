@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, Check, Copy, ArrowUpRight } from 'lucide-react';
+import { Phone, Check, Copy, ArrowUpRight, FileText } from 'lucide-react';
+
+interface ContactProps {
+  onOpenResume?: () => void;
+}
 
 const GithubIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5" }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -7,7 +11,7 @@ const GithubIcon: React.FC<{ className?: string }> = ({ className = "w-3.5 h-3.5
   </svg>
 );
 
-export const Contact: React.FC = () => {
+export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
   const [copied, setCopied] = useState(false);
   const email = "mujtabashaikh2812@gmail.com";
 
@@ -59,6 +63,17 @@ export const Contact: React.FC = () => {
               </>
             )}
           </button>
+
+          {onOpenResume && (
+            <button
+              onClick={onOpenResume}
+              className="px-7 py-4 rounded-full bg-crimson/15 hover:bg-crimson/25 border border-crimson/40 hover:border-crimson text-white font-mono text-xs hover:scale-105 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+              title="Inspect Full Technical Resume"
+            >
+              <FileText className="w-3.5 h-3.5 text-rose-300" />
+              <span>Inspect Resume (CV)</span>
+            </button>
+          )}
 
           <a
             href="tel:+919359110610"
